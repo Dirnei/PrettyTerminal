@@ -61,6 +61,11 @@ void PrettyTerminal::empty(uint8_t count)
 
 void PrettyTerminal::printKeyValue(const char *key, uint8_t keyWidth, const char *value)
 {
+    printKeyValue(key, keyWidth, value, true);
+}
+
+void PrettyTerminal::printKeyValue(const char *key, uint8_t keyWidth, const char *value, bool newLine)
+{
     uint8_t keyLen = strlen(key);
     if ((keyLen + 1) > keyWidth)
     {
@@ -73,7 +78,14 @@ void PrettyTerminal::printKeyValue(const char *key, uint8_t keyWidth, const char
     uint8_t spacing = keyWidth - keyLen;
     printRepeat(' ', spacing);
     Serial.print(": ");
-    Serial.println(value);
+    if (newLine)
+    {
+        Serial.println(value);
+    }
+    else
+    {
+        Serial.print(value);
+    }
 }
 
 void PrettyTerminal::printHeader(const char *title)
