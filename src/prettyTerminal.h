@@ -16,6 +16,7 @@ class PrettyTerminal
 
     void indent(uint8_t amount, const char *value);
     void empty();
+    void empty(uint8_t count);
 
     void printHeader(const char *title);
     void printHeaderSmall(const char *title);

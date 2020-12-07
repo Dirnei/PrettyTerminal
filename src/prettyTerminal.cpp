@@ -51,6 +51,14 @@ void PrettyTerminal::empty()
     Serial.println();
 }
 
+void PrettyTerminal::empty(uint8_t count)
+{
+    for(uint8_t i = 0; i < count; i++)
+    {
+        Serial.println();
+    }
+}
+
 void PrettyTerminal::printHeader(const char *title)
 {
     printHorizontalLineDouble();
