@@ -16,8 +16,16 @@ class PrettyTerminal
 
     void indent(uint8_t amount, const char *value);
     void empty();
+
     void printHeader(const char *title);
+    void printHeaderSmall(const char *title);
+
     void printCentered(const char *value);
+    void printCentered(const char *value, int len);
+
+    void printCenteredDecorated(const char *value, char decorator);
+    void printCenteredDecorated(const char *value, char decorator, int len);
+
     void printRight(const char *value);
     void printList(uint8_t ident, size_t order, const char* value);
 

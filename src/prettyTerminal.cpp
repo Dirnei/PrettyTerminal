@@ -53,22 +53,47 @@ void PrettyTerminal::empty()
 
 void PrettyTerminal::printHeader(const char *title)
 {
-    printHorizontalLineBold();
+    printHorizontalLineDouble();
     printCentered(title);
-    printHorizontalLineBold();
+    printHorizontalLineDouble();
+    empty();
+}
+
+void PrettyTerminal::printHeaderSmall(const char *title)
+{
+    printCenteredDecorated(title, '-');
     empty();
 }
 
 void PrettyTerminal::printCentered(const char *value)
 {
-    size_t len = strlen(value);
+    printCenteredDecorated(value, ' ', strlen(value));
+}
+
+void PrettyTerminal::printCentered(const char *value, int len)
+{
+    printCenteredDecorated(value, ' ', strlen(value));
+}
+
+void PrettyTerminal::printCenteredDecorated(const char *value, char decorator)
+{
+    printCenteredDecorated(value, decorator, strlen(value));
+}
+
+void PrettyTerminal::printCenteredDecorated(const char *value, char decorator, int len)
+{
     if (len < _width - 1)
     {
         len = (_width - len) / 2;
-        printRepeat(' ', len);
+        printRepeat(decorator, len);
     }
-    
+
     Serial.println(value);
+
+    if (decorator != ' ')
+    {
+        printRepeat(decorator, len);
+    }
 }
 
 void PrettyTerminal::printList(uint8_t indent, size_t order, const char *value)
