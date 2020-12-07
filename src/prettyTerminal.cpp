@@ -88,11 +88,14 @@ void PrettyTerminal::printCenteredDecorated(const char *value, char decorator, i
         printRepeat(decorator, len);
     }
 
-    Serial.println(value);
-
     if (decorator != ' ')
     {
+        Serial.print(value);
         printRepeat(decorator, len);
+    }
+    else
+    {
+        Serial.println(value);
     }
 }
 
