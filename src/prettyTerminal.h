@@ -18,6 +18,8 @@ class PrettyTerminal
     void empty();
     void empty(uint8_t count);
 
+    void printKeyValue(const char *key, uint8_t keyWidth, const char *value);
+
     void printHeader(const char *title);
     void printHeaderSmall(const char *title);
 

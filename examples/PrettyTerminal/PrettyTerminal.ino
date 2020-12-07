@@ -26,6 +26,12 @@ void setup()
     pTerm.printList(1, 1, "German");
     pTerm.printList(1, 2, "Bavarian");
     pTerm.printHorizontalLineMiddle();
+    pTerm.empty();
+    pTerm.empty();
+    pTerm.printHeaderSmall("Key Value list");
+    pTerm.printKeyValue("Entry1", 15, "This is the value");
+    pTerm.printKeyValue("Entry2", 15, "This is another value");
+    pTerm.printKeyValue("ThisIsAPrettyLongKey", 15, "This is another value");
 }
 
 void loop()

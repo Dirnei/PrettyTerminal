@@ -53,10 +53,27 @@ void PrettyTerminal::empty()
 
 void PrettyTerminal::empty(uint8_t count)
 {
-    for(uint8_t i = 0; i < count; i++)
+    for (uint8_t i = 0; i < count; i++)
     {
         Serial.println();
     }
+}
+
+void PrettyTerminal::printKeyValue(const char *key, uint8_t keyWidth, const char *value)
+{
+    uint8_t keyLen = strlen(key);
+    if ((keyLen + 1) > keyWidth)
+    {
+        keyWidth = keyLen + 1;
+    }
+
+    Serial.print(" ");
+    Serial.print(key);
+
+    uint8_t spacing = keyWidth - keyLen;
+    printRepeat(' ', spacing);
+    Serial.print(": ");
+    Serial.println(value);
 }
 
 void PrettyTerminal::printHeader(const char *title)
@@ -115,12 +132,12 @@ void PrettyTerminal::printList(uint8_t indent, size_t order, const char *value)
     this->indent(indent, buf);
 }
 
-void PrettyTerminal::printRight(const char * value)
+void PrettyTerminal::printRight(const char *value)
 {
     printRight(value, 0);
 }
 
-void PrettyTerminal::printRight(const char * value, uint8_t currentPos)
+void PrettyTerminal::printRight(const char *value, uint8_t currentPos)
 {
     uint8_t empty = _width - currentPos - strlen(value);
     printRepeat(' ', empty);
