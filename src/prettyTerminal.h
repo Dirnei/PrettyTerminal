@@ -27,6 +27,7 @@ class PrettyTerminal
     void printCenteredDecorated(const char *value, char decorator, int len);
 
     void printRight(const char *value);
+    void printRight(const char *value, uint8_t currentPos);
     void printList(uint8_t ident, size_t order, const char* value);
 
   protected:

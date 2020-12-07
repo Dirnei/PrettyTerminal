@@ -107,6 +107,18 @@ void PrettyTerminal::printList(uint8_t indent, size_t order, const char *value)
     this->indent(indent, buf);
 }
 
+void PrettyTerminal::printRight(const char * value)
+{
+    printRight(value, 0);
+}
+
+void PrettyTerminal::printRight(const char * value, uint8_t currentPos)
+{
+    uint8_t empty = _width - currentPos - strlen(value);
+    printRepeat(' ', empty);
+    Serial.println(value);
+}
+
 void PrettyTerminal::printHorizontalLineDouble()
 {
     printlnRepeat(_cDouble, _width);
