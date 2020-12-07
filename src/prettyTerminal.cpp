@@ -72,7 +72,7 @@ void PrettyTerminal::printCentered(const char *value)
 
 void PrettyTerminal::printCentered(const char *value, int len)
 {
-    printCenteredDecorated(value, ' ', strlen(value));
+    printCenteredDecorated(value, ' ', len);
 }
 
 void PrettyTerminal::printCenteredDecorated(const char *value, char decorator)
