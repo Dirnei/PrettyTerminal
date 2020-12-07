@@ -1,0 +1,25 @@
+
+{
+    "version": "2.0.0",
+    "command": "./build.ps1",
+    "tasks": [
+        {
+            "label": "PrettyTeminal: Build",
+            "type": "shell",
+            "args": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "PrettyTeminal: Upload",
+            "type": "shell",
+            "args": [
+                "-Upload"
+            ],
+            "problemMatcher": []
+        }
+    ]
+}
