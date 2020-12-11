@@ -9,6 +9,7 @@ class PrettyTerminal
   public:
     PrettyTerminal(uint8_t width, uint8_t indentWidth);
 
+    void printHorizontalLine(char c);
     void printHorizontalLineDouble(void);
     void printHorizontalLineUnder(void);
     void printHorizontalLineMiddle(void);

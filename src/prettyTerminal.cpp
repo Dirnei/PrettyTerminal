@@ -156,6 +156,11 @@ void PrettyTerminal::printRight(const char *value, uint8_t currentPos)
     Serial.println(value);
 }
 
+void PrettyTerminal::printHorizontalLine(char c)
+{
+    printlnRepeat(c, _width);
+}
+
 void PrettyTerminal::printHorizontalLineDouble()
 {
     printlnRepeat(_cDouble, _width);
