@@ -1,0 +1,23 @@
+{
+    "name": "PrettyTerminal",
+    "version": "1.0.2",
+    "description": "A OTA Update client to install new firmware from a webserver",
+    "keywords": "PrettyTerminal,terminal,serial",
+    "repository":
+    {
+      "type": "git",
+      "url": "https://github.com/Dirnei/PrettyTerminal.git"
+    },
+    "authors":
+    [
+      {
+        "name": "Christian Dirnhofer",
+        "email": "christian@dirnhofer.net",
+        "url": "https://www.dirnhofer.net"
+      }
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/Dirnei/PrettyTerminal",
+    "frameworks": "arduino",
+    "platforms": "espressif32"
+  }
